@@ -21,7 +21,7 @@ Image ID: A unique identifier for each Docker image.
 Tags: Labels used to manage and version Docker images
 
 
-##TASK 1##    I try to find out what -p and -e arguments you have to pass to the docker run command?
+## TASK 1##    I try to find out what -p and -e arguments you have to pass to the docker run command?
 
 
 My set-up --- (I doing before from expass1), docker system - docker is installed on my computer! 
@@ -45,9 +45,8 @@ docker run -p {{ Find out what Port you have to expose... }} \
 
 ![Skjermbilde 2024-10-17 114019](https://github.com/user-attachments/assets/e3573379-b0bb-43c6-ba54-98dc084381d4)
 
-##TASK 2##
+## TASK 2##  Building you own dockerized application 
 
-Building you own dockerized application 
 Now, write Dockerfile in this following steps:
 
 Start with the FROM <base image> line,
