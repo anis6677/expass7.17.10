@@ -5,6 +5,14 @@ First want to say about DOCKER;
 A Docker image is an executable package that includes everything needed to run a piece of software, such as the code, runtime, 
 libraries, environment variables, and configuration files. 
 
+![thumbnail_20241016_125738](https://github.com/user-attachments/assets/c0dccbe8-e4ba-4072-bac1-50ee23f2353a)
+
+
+
+
+![thumbnail_20241017_100552](https://github.com/user-attachments/assets/4f19f954-3c6b-4ad2-939f-44725826917b)
+
+
 It serves as a blueprint for creating Docker containers, 
 which are instances of these images running in isolated environments
 
