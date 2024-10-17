@@ -1,8 +1,27 @@
 The goal of this lecture is to get familiar with Docker.
 I will look both at using "containerized" standard software as well as "containerizing" applications.
 
+First want to say about DOCKER;
+A Docker image is an executable package that includes everything needed to run a piece of software, such as the code, runtime, 
+libraries, environment variables, and configuration files. 
 
-TASK 1
+It serves as a blueprint for creating Docker containers, 
+which are instances of these images running in isolated environments
+
+Docker images are composed of several key components:
+
+Layers: Immutable filesystem layers stacked to form a complete image. Each layer represents a set of file changes or additions.
+
+Base Image: The foundational layer, often a minimal OS or runtime environment.
+
+Dockerfile: A text file containing instructions to build a Docker image.
+
+Image ID: A unique identifier for each Docker image.
+
+Tags: Labels used to manage and version Docker images
+
+
+##TASK 1##    I try to find out what -p and -e arguments you have to pass to the docker run command?
 
 
 My set-up --- (I doing before from expass1), docker system - docker is installed on my computer! 
@@ -26,7 +45,15 @@ docker run -p {{ Find out what Port you have to expose... }} \
 
 ![Skjermbilde 2024-10-17 114019](https://github.com/user-attachments/assets/e3573379-b0bb-43c6-ba54-98dc084381d4)
 
+##TASK 2##
 
+Building you own dockerized application 
+Now, write Dockerfile in this following steps:
+
+Start with the FROM <base image> line,
+copy your application into the image via the COPY instruction,
+and install dependencies as well as package the application by executing the respective shell commands with RUN statements (tips: the gradle bootJar task can be "handy" here).
+The final instruction should be the CMD instruction that starts the Spring Boot Java application.
 Implementation("org.postgresql:postgresql:42.7.4")
 
 the target to find container -e represent user and password while -d represent database; -rm postgres (not the default behavior), a
