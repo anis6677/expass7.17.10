@@ -44,14 +44,41 @@ for the find ting and argument -p-e docker run
 docker run -p {{ Find out what Port you have to expose... }} \
  -e {{ Find out what environment variables you have to set... }} \
  -d --name my-postgres --rm postgres
+
+ ![thumbnail_20241017_124314](https://github.com/user-attachments/assets/040fdf2e-5b37-42f7-84f4-4e5001178785)
+
+ ![thumbnail_20241017_124259](https://github.com/user-attachments/assets/19ee0196-110d-4112-bd20-60527e43923f)
+
+![thumbnail_20241017_124244](https://github.com/user-attachments/assets/402e4456-17bc-4f34-890b-03c17d2cb133)
+
+
+dockerbuild
+
+![thumbnail_20241017_124229](https://github.com/user-attachments/assets/6f0ac8c8-018e-424e-906d-85ed7c2fa787)
+
+
  
+
 
 ![Skjermbilde 2024-10-17 114607](https://github.com/user-attachments/assets/4af08f26-bd62-4258-bb2a-2a62d48a16f2)
 
+my docker startet with kommand docker ps
+
+and after 
+docker logs my-postgres
 
 ![Skjermbilde 2024-10-17 113841](https://github.com/user-attachments/assets/72fdbd2a-db87-4a07-a1cc-ef3f0ac5d40e)
 
 ![Skjermbilde 2024-10-17 114019](https://github.com/user-attachments/assets/e3573379-b0bb-43c6-ba54-98dc084381d4)
+
+
+To the last ting 
+
+Success.You can now start the database server using- Create database
+
+![thumbnail_20241017_124049](https://github.com/user-attachments/assets/561fdc29-a088-408f-9232-e287455ff66d)
+
+
 
 ## TASK 2##  Building you own dockerized application 
 
@@ -63,6 +90,16 @@ and install dependencies as well as package the application by executing the res
 The final instruction should be the CMD instruction that starts the Spring Boot Java application.
 Implementation("org.postgresql:postgresql:42.7.4")
 
+with the PostgreSQL connection:
+
+    ...
+    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+    <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+    <property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/postgres"/>
+    <property name="hibernate.connection.username" value="jpa_client"/>
+    <property name="hibernate.connection.password" value="secret"/>
+
+    
 the target to find container -e represent user and password while -d represent database; -rm postgres (not the default behavior), a
 dd two variables to postgres and docker image run,
 
