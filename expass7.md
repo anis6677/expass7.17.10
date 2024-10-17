@@ -65,8 +65,17 @@ JPA client (best practice).
 CREATE USER jpa_client WITH PASSWORD 'secret';
 After the new user has been created, switch over to the Java project. To change the database from H2 to PostgreSQL, you first have to add the correct JDBC driver. Open the build.gradle.kts file and add the following dependency:
 
+![Skjermbilde 2024-10-17 114223](https://github.com/user-attachments/assets/85955040-5134-423f-b244-810259a0ed3f)
+
+
+![Skjermbilde 2024-10-17 114622](https://github.com/user-attachments/assets/caf11c3e-b1cd-4459-87f3-ec5ed6a97d9c)
+
+
 implementation("org.postgresql:postgresql:42.7.4")
 Also, replace the old connection parameters in the persistence.xml from the JPA example, which used H2:
+
+![Skjermbilde 2024-10-17 114607](https://github.com/user-attachments/assets/7441b467-4fa3-49de-b61c-b97e6a843c6b)
+
 
 ![Skjermbilde 2024-10-17 114223](https://github.com/user-attachments/assets/bca6b9a9-af4e-47aa-b2ec-b24203aafc33)
 
