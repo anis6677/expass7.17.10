@@ -5,13 +5,7 @@ First want to say about DOCKER;
 A Docker image is an executable package that includes everything needed to run a piece of software, such as the code, runtime, 
 libraries, environment variables, and configuration files. 
 
-![thumbnail_20241016_125738](https://github.com/user-attachments/assets/c0dccbe8-e4ba-4072-bac1-50ee23f2353a)
-
-
-
-
 ![thumbnail_20241017_100552](https://github.com/user-attachments/assets/4f19f954-3c6b-4ad2-939f-44725826917b)
-
 
 It serves as a blueprint for creating Docker containers, 
 which are instances of these images running in isolated environments
@@ -34,6 +28,16 @@ Tags: Labels used to manage and version Docker images
 
 My set-up --- (I doing before from expass1), docker system - docker is installed on my computer! 
 Using a Dockerized application: PostgreSQL
+
+
+Update 18.10.2024 
+**I have problem in my pc with 5432; so i pulled the postgres docker with ather command: docker run - p 5433:5432 -e POSTGRES_PASSORD=** **- d --name my-postgres --rm postgres, 
+i used port 5433 because i had a local problem;**
+
+![bilde](https://github.com/user-attachments/assets/95a4af1d-a4d3-45f0-be4e-dd7483ea8fb8)
+
+
+
 
 On of the main advantages of Docker is that it greatly simplifies running such software. Instead of manually installing PostgreSQL - docker image of PostgreSQL.docker pull postgresThe image name postgres gets implicitly expanded to docker.io/library/postgres:latest, i.e. the image tagged as latest, stored in the repository postgres, 
 maintained by Docker Inc. (library) and hosted on Docker Hub (docker.io).
@@ -79,6 +83,8 @@ Success.You can now start the database server using- Create database
 ![thumbnail_20241017_124049](https://github.com/user-attachments/assets/561fdc29-a088-408f-9232-e287455ff66d)
 
 
+I ran the test but before I generate SQL to jpa_ client;
+
 
 ## TASK 2##  Building you own dockerized application 
 
@@ -108,6 +114,11 @@ Then using gradle defines image, which obtained from gradle and runs RUN gradle 
 JPA client (best practice).
 
 CREATE USER jpa_client WITH PASSWORD 'secret';
+
+![bilde](https://github.com/user-attachments/assets/1265e472-cfc7-4908-b115-a9ee33d48a9b)
+
+
+
 After the new user has been created, switch over to the Java project. To change the database from H2 to PostgreSQL, you first have to add the correct JDBC driver. Open the build.gradle.kts file and add the following dependency:
 
 ![Skjermbilde 2024-10-17 114223](https://github.com/user-attachments/assets/85955040-5134-423f-b244-810259a0ed3f)
@@ -126,12 +137,18 @@ Also, replace the old connection parameters in the persistence.xml from the JPA 
 
 ![Skjermbilde 2024-10-17 114607](https://github.com/user-attachments/assets/318c905e-1061-4a19-95b0-254826369378)
 
-
-
-
-
-
-
 ![Skjermbilde 2024-10-17 114622](https://github.com/user-attachments/assets/ca00186a-3e38-4d63-9c7b-c980de632ebd)
+
+**I wont to put more picture and shows my steps how I implemented a multi-stage build to slim versjon...
+and the last ting created a new user to run user, and run all my container!** 
+
+![bilde](https://github.com/user-attachments/assets/dc7d7488-4e78-41b4-9a85-0907ea19a30a)
+
+![bilde](https://github.com/user-attachments/assets/561d0a5c-c95c-4ee5-bdb3-62e6088e043f)
+
+dockerfile 
+![bilde](https://github.com/user-attachments/assets/f04c402e-2603-45b1-8546-ec1738b6ef54)
+
+
 
 
